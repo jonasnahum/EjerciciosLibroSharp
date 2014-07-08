@@ -1,0 +1,7 @@
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7Test\obj\Debug\InterfacesCap7Test.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7Test\bin\Debug\InterfacesCap7Test.dll
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7Test\bin\Debug\InterfacesCap7Test.pdb
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7Test\bin\Debug\InterfacesCap7.dll
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7Test\bin\Debug\InterfacesCap7.pdb
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7Test\obj\Debug\InterfacesCap7Test.dll
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7Test\obj\Debug\InterfacesCap7Test.pdb

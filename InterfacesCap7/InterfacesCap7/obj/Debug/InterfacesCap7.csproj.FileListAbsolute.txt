@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7\obj\Debug\InterfacesCap7.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7\bin\Debug\InterfacesCap7.dll
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7\bin\Debug\InterfacesCap7.pdb
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7\obj\Debug\InterfacesCap7.dll
+C:\Users\casa\Documents\GitHub\InterfacesCap7\InterfacesCap7\obj\Debug\InterfacesCap7.pdb
