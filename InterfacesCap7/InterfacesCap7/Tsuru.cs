@@ -30,7 +30,7 @@ namespace InterfacesCap7
         {
             return mAvanzar;
         }
-        // estos metodos  y e prpropiedad de la interfase, son explicitos, porque te indican de que interface provienen
+        // estos metodos  y e prpropiedad de la interfase, son implicitos, porque te indican de que interface provienen
         
     }
 }
