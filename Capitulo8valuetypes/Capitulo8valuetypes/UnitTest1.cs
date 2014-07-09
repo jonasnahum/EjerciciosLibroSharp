@@ -12,8 +12,8 @@ namespace Capitulo8valuetypes
         {
             int edad = 10;// tipo por valor.
             
-            Persona juan = new Persona();//tipo por referencia.
-            Persona pedro = juan;//son la misma referencia, los valores que cambie uno, los cambiara el otro.
+            Persona juan = new Persona();//tipo por referencia., las clases y objetos son tipos por referencia.
+            Persona pedro = juan;//son la misma referencia, los valores que cambie un objeto o variable, los cambiara el otro.
             Persona pablo=new Persona();
 
             Assert.AreEqual(0, pedro.Edad);
@@ -52,12 +52,27 @@ namespace Capitulo8valuetypes
         [TestMethod]
         public void EnumTest()
         {
-            UnaPalabra escoger = new UnaPalabra();
-            string palabra = escoger.QueEmpieceCon(Vocales.a);
-            Assert.AreEqual("avion", palabra);
+            Loncheria loncheria = new Loncheria();
+            Torta hawaiana = (Torta)loncheria.PrepararComida(Menu.torta);
+            Assert.
+        }
+        [TestMethod]
+        public void StructTest()
+        {
+            Persona Juan = new Persona();
+            Persona Pedro = Juan;
+            PersonaStruct JuanStruct = new PersonaStruct();
+            PersonaStruct PedroStruct = JuanStruct;
 
-            Vocales vocal = (Vocales)Enum.Parse(typeof(Vocales), "a");
-            Assert.AreEqual(Vocales.a, vocal);
+            Juan.Nombre = "juan";
+            Juan.Edad = 22;
+            JuanStruct.Nombre = "juan";
+            JuanStruct.Edad = 22;
+            // los estruct son inmutables, siempre hacen una copia del dato no se afecta su valor por referencia.
+            Assert.AreEqual("juan", Pedro.Nombre);//es por referencia, por lo tanto pedro se modifica.
+            Assert.AreEqual(22, Pedro.Edad);
+            Assert.IsNull(PedroStruct.Nombre);//es null porque juan struct se comporta como tipo por valor y no afecta a pedrostruct.
+            Assert.AreEqual(0,PedroStruct.Edad);//es 0 porque cuando se inicializa la clase, todos los enteros se inicializan en 0, no copia el contenido de jaunstruct.
         }
     }
 }

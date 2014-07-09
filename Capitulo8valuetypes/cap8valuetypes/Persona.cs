@@ -16,9 +16,9 @@ namespace cap8valuetypes
             persona.Edad = noDeAnos + persona.Edad;
             
         }
-        public void Sumar(int noDeAnos, int edad)//aqui no hay persona, sino simplemente un valor de 10.
+        public void Sumar(int noDeAnos, int edad)//aqui no hay persona, no hay objeto, ni referencia. sino simplemente un valor de 10.esto es un tipo por valor.
         {
-            edad = noDeAnos + edad;
+            edad = noDeAnos + edad;//aqui recibe la variable edad. y Juan.Edad,  y las asigna a edad, aqui en este metodo si hace la operacion y el resultado es 20, sin embargo la variable edad que se encuentra en UnitTest, no cambia, porque es un tipo por valor.
         }
         public void SumarUno(object objeto)
         {
@@ -30,5 +30,10 @@ namespace cap8valuetypes
             objeto=objeto + 1;
         }
     }
-    
+    public struct PersonaStruct// estruct es una clase, que se comporta como un tipo por valor
+    {
+        public int Edad { get; set; }
+        public string Nombre { get; set; }
+
+    }
 }
