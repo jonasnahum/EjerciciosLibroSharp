@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo8valuetypes\cap8valuetypes\bin\Debug\cap8valuetypes.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo8valuetypes\cap8valuetypes\bin\Debug\cap8valuetypes.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo8valuetypes\cap8valuetypes\obj\Debug\cap8valuetypes.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo8valuetypes\cap8valuetypes\obj\Debug\cap8valuetypes.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo8valuetypes\cap8valuetypes\obj\Debug\cap8valuetypes.pdb
