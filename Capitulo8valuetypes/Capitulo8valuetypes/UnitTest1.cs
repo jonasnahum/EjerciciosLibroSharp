@@ -52,17 +52,17 @@ namespace Capitulo8valuetypes
         [TestMethod]
         public void EnumTest()
         {
-            Loncheria loncheria = new Loncheria();
-            Torta hawaiana = (Torta)loncheria.PrepararComida(Menu.torta);
-            Assert.
+            Loncheria loncheria = new Loncheria();//se crea un objeto de loncheria.
+            Torta hawaiana = (Torta)loncheria.PrepararComida(Menu.torta);//una variable de tipo torta es igual a loncheria.PrepararComida(Menu.torta), esto es de tipo loncheria, ahora entre parentesis, se le convierte a tipo torta para poderla guardar en la variable.
+            Assert.                                                      //ahora hawaiana tiene todos los ingredientes de una torta.
         }
         [TestMethod]
         public void StructTest()
         {
-            Persona Juan = new Persona();
-            Persona Pedro = Juan;
-            PersonaStruct JuanStruct = new PersonaStruct();
-            PersonaStruct PedroStruct = JuanStruct;
+            Persona Juan = new Persona();//se hace un objeto Juan
+            Persona Pedro = Juan;//Juan y pedro, por referencia.
+            PersonaStruct JuanStruct = new PersonaStruct();//se crea un objeto con las caracteristicas de struct.
+            PersonaStruct PedroStruct = JuanStruct;//juanstruct se asigna a pedrostruct, pero no se altera pedro, porque se comporta como datos por valor y lo que tiene juanstruct, no se le pasa a pedrostruct.
 
             Juan.Nombre = "juan";
             Juan.Edad = 22;
