@@ -54,7 +54,9 @@ namespace Capitulo8valuetypes
         {
             Loncheria loncheria = new Loncheria();//se crea un objeto de loncheria.
             Torta hawaiana = (Torta)loncheria.PrepararComida(Menu.torta);//una variable de tipo torta es igual a loncheria.PrepararComida(Menu.torta), esto es de tipo loncheria, ahora entre parentesis, se le convierte a tipo torta para poderla guardar en la variable.
-            Assert.                                                      //ahora hawaiana tiene todos los ingredientes de una torta.
+            Assert.IsNotNull(hawaiana);                                                      //ahora hawaiana tiene todos los ingredientes de una torta.
+            Assert.IsTrue(hawaiana.Ingredientes.ToString().ToLower().Contains("jamon"));//Tostring lo convierte a texto, to lower a minusculas y contains regresa verdadero si contiene el texto.
+            Assert.IsFalse(hawaiana.Ingredientes.ToString().ToLower().Contains("leche"));
         }
         [TestMethod]
         public void StructTest()

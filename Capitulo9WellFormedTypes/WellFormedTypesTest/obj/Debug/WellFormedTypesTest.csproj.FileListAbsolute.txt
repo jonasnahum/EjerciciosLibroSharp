@@ -1,0 +1,7 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo9WellFormedTypes\WellFormedTypesTest\bin\Debug\WellFormedTypesTest.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo9WellFormedTypes\WellFormedTypesTest\bin\Debug\WellFormedTypesTest.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo9WellFormedTypes\WellFormedTypesTest\bin\Debug\Capitulo9WellFormedTypes.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo9WellFormedTypes\WellFormedTypesTest\bin\Debug\Capitulo9WellFormedTypes.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo9WellFormedTypes\WellFormedTypesTest\obj\Debug\WellFormedTypesTest.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo9WellFormedTypes\WellFormedTypesTest\obj\Debug\WellFormedTypesTest.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Capitulo9WellFormedTypes\WellFormedTypesTest\obj\Debug\WellFormedTypesTest.pdb

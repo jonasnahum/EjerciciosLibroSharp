@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capitulo9WellFormedTypes", "Capitulo9WellFormedTypes\Capitulo9WellFormedTypes.csproj", "{262C41F8-6E46-43BD-8089-1DF7D1CFDBB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WellFormedTypesTest", "WellFormedTypesTest\WellFormedTypesTest.csproj", "{FF1F788A-E22C-479A-A6BB-57E57364EFAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{262C41F8-6E46-43BD-8089-1DF7D1CFDBB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262C41F8-6E46-43BD-8089-1DF7D1CFDBB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262C41F8-6E46-43BD-8089-1DF7D1CFDBB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262C41F8-6E46-43BD-8089-1DF7D1CFDBB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF1F788A-E22C-479A-A6BB-57E57364EFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF1F788A-E22C-479A-A6BB-57E57364EFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF1F788A-E22C-479A-A6BB-57E57364EFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF1F788A-E22C-479A-A6BB-57E57364EFAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

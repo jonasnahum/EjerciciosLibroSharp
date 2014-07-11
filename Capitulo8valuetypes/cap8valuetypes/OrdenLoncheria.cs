@@ -73,7 +73,7 @@ namespace cap8valuetypes
         Licuado//la ultima coma no se escribe.
     }
     [Flags]//un listado del que se pueden escoger varios elementos, salteados.
-    enum ListaDeIngredientes
+    public enum ListaDeIngredientes
     {
         jitomate =1<<0,//el uno se pone para que el numero binario se recorra 0 posiciones.
         cebolla = 1 << 1,//el numero binario se recorre 1 posicion.
