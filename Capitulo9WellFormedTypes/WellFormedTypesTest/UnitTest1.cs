@@ -62,5 +62,49 @@ namespace WellFormedTypesTest
             Assert.IsFalse(p1 != p2);
         }
 
+        [TestMethod]
+        public void GarbageCollectorTest()
+        {
+            //Estudiante estudiante = new Estudiante();
+            //estudiante.Leer();
+            //estudiante.Leer();
+           
+        }
+
+        [TestMethod]
+        public void GarbageCollectorTest1()
+        {
+            Diccionario d = null;
+            try
+            {
+                //Estudiante estudiante = new Estudiante();
+                //estudiante.Leer();
+                d = new Diccionario();
+                int error = int.Parse("hola");
+                string palabra = d.Palabras[1000].Valor;
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally 
+            {
+                d.Dispose();//libera los recursos
+            }
+
+            //using (Diccionario d1 = new Diccionario(), d2 = new Diccionario())//una abreviacion de lo anterior, en este caso, si marca o no marca error lo que esta adentro, finalmente se mandara llamar el metodo dispose de la interface Disposable. las clases deben implementar Idisposable, y si son varios, separados por coma, poniendo el tipo al principio.
+            //{
+            //    int error = int.Parse("hola");
+            //    string palabra = d1.Palabras[1000].Valor;
+            //}
+        }
+        [TestMethod]
+        public void Lazyloading()
+        {
+            LectorDiccionario lector = new LectorDiccionario();
+            lector.Leer();
+            string hola = "hola";
+        }
+        
     }
 }
