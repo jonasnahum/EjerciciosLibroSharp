@@ -1,0 +1,7 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap10Exceptionhandling\Cap10Test\bin\Debug\Cap10Test.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap10Exceptionhandling\Cap10Test\bin\Debug\Cap10Test.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap10Exceptionhandling\Cap10Test\bin\Debug\Cap10Exceptionhandling.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap10Exceptionhandling\Cap10Test\bin\Debug\Cap10Exceptionhandling.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap10Exceptionhandling\Cap10Test\obj\Debug\Cap10Test.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap10Exceptionhandling\Cap10Test\obj\Debug\Cap10Test.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap10Exceptionhandling\Cap10Test\obj\Debug\Cap10Test.pdb

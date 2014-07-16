@@ -6,6 +6,34 @@ using System.Threading.Tasks;
 
 namespace Capitulo9WellFormedTypes
 {
+
+    public class MiClase 
+    {
+        public MiClase() 
+        {
+
+        }
+        public MiClase(string prop1, string prop2)
+        {
+            this.Propiedad1 = prop1;
+            this.Propiedad2 = prop2;
+        }
+        public string Propiedad1 { get; set; }
+        public string Propiedad2 { get; set; }
+        /// <summary>
+        /// Formas de inicializar un objeto
+        /// </summary>
+        public static void MiMetodo() 
+        {
+            MiClase clase1 = new MiClase();
+            MiClase clase2 = new MiClase("hola", "mundo");
+            MiClase clase3 = new MiClase() { Propiedad1 = "Hola", Propiedad2 = "mundo" };
+            MiClase clase4 = new MiClase();
+            clase4.Propiedad1 = "hola";
+            clase4.Propiedad2 = "mundo";
+        }
+    }
+
     public class Diccionario:IDisposable
     {
         public Palabra[] Palabras =new Palabra[5000000];//un array de tipo Palabra aqui en Class Diccionario.
