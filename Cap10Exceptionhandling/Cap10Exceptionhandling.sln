@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cap10Exceptionhandling", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cap10Test", "Cap10Test\Cap10Test.csproj", "{DF5406B9-EBA1-4B9B-B907-4BB3E2AB874E}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{BD60A903-41BF-4898-A394-97FD245CE5E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{DF5406B9-EBA1-4B9B-B907-4BB3E2AB874E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF5406B9-EBA1-4B9B-B907-4BB3E2AB874E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF5406B9-EBA1-4B9B-B907-4BB3E2AB874E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD60A903-41BF-4898-A394-97FD245CE5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD60A903-41BF-4898-A394-97FD245CE5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD60A903-41BF-4898-A394-97FD245CE5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD60A903-41BF-4898-A394-97FD245CE5E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
