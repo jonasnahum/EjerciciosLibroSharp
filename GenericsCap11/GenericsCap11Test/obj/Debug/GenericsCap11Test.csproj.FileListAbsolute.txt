@@ -1,0 +1,7 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\GenericsCap11\GenericsCap11Test\obj\Debug\GenericsCap11Test.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\GenericsCap11\GenericsCap11Test\bin\Debug\GenericsCap11Test.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\GenericsCap11\GenericsCap11Test\bin\Debug\GenericsCap11Test.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\GenericsCap11\GenericsCap11Test\bin\Debug\GenericsCap11.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\GenericsCap11\GenericsCap11Test\bin\Debug\GenericsCap11.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\GenericsCap11\GenericsCap11Test\obj\Debug\GenericsCap11Test.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\GenericsCap11\GenericsCap11Test\obj\Debug\GenericsCap11Test.pdb

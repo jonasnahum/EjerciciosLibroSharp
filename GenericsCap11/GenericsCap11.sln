@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsCap11", "GenericsCap11\GenericsCap11.csproj", "{182FC804-0376-4096-BC89-933A0A90354F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsCap11Test", "GenericsCap11Test\GenericsCap11Test.csproj", "{242B9C61-F603-4291-9B03-02C0FA938628}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{182FC804-0376-4096-BC89-933A0A90354F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{182FC804-0376-4096-BC89-933A0A90354F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{182FC804-0376-4096-BC89-933A0A90354F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{182FC804-0376-4096-BC89-933A0A90354F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{242B9C61-F603-4291-9B03-02C0FA938628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{242B9C61-F603-4291-9B03-02C0FA938628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{242B9C61-F603-4291-9B03-02C0FA938628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{242B9C61-F603-4291-9B03-02C0FA938628}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

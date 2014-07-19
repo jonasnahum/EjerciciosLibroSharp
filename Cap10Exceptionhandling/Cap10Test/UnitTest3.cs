@@ -10,12 +10,12 @@ namespace Cap10Test
         [TestMethod]
         public void ArrayMethod()
         {
-            IArrays prueba = MetodoDePrueba();
+            IArrays prueba = MetodoDePrueba();//un objeto guardado en variable prueba que tiene las propiedades de IArray, sus metodos. una variable prueba de tipo IArrays a la que se le asigna el metodo que regresa la clase ArrayJonas(). es como hacer un objeto de la ArrayJonas que implementa la interface.
             string textoParaEnviar = "hola";     
             char[] resultadoDelMetodo;
             char[] resultadoEsperado = new char[] {'h','o','l','a' };
             resultadoDelMetodo = prueba.ConvertirEnArray(textoParaEnviar);
-            for(int i = 0; i < resultadoEsperado.Length; i++)
+            for(int i = 0; i < resultadoEsperado.Length; i++)//los Assert.AreEqual en array se comparan ási.
             {
                 Assert.AreEqual(resultadoEsperado[i], resultadoDelMetodo[i]);
             }
@@ -44,7 +44,7 @@ namespace Cap10Test
         }
         public IArrays MetodoDePrueba()
         {
-            return new Arrayjonas();
+            return new Arrayjonas();//cuando no hay nada en la clase, throw new not implementedexception();
 
         }
 

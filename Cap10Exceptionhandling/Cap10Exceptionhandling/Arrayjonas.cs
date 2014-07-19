@@ -16,11 +16,11 @@ namespace Cap10Exceptionhandling
 
         public int[] ContarLetrasEnpalabras(string[] arrayDePalabras)
         {
-            int [] numero=new int[arrayDePalabras.Length];
+            int [] numero=new int[arrayDePalabras.Length];//un array de enteros llamado nuemero que tiene las mismas longitud que arrayDePalabras.
 
             for (int i = 0; i < arrayDePalabras.Length; i++)
             {
-                numero[i]=arrayDePalabras[i].Length;
+                numero[i]=arrayDePalabras[i].Length;//a cada palabra se le aplica.Lenght y el numero que sale de ahi, se guarda en la variable numero.
                      
             }
             return numero;
@@ -45,7 +45,7 @@ namespace Cap10Exceptionhandling
 
         public bool Diagonales(char[,] gato, char letra) 
         {
-            if (gato[0, 0] == letra && gato[1, 1] == letra && gato[2, 2] == letra)
+            if (gato[0, 0] == letra && gato[1, 1] == letra && gato[2, 2] == letra)//si en las posiciones coordenadas del array, hay la misma letra.
                 return true;
 
             if (gato[2, 0] == letra && gato[1, 1] == letra && gato[0, 2] == letra)
@@ -60,7 +60,7 @@ namespace Cap10Exceptionhandling
             {
                 if (que == "columnas")
                 {
-                    if (EvaluarLinea(gato[i, 0], gato[i, 1], gato[i, 2], letra))
+                    if (EvaluarLinea(gato[i, 0], gato[i, 1], gato[i, 2], letra))//si es rerdad el metodo bool EvaluarLinea().
                         return true;
                 }
                 else 
@@ -72,7 +72,7 @@ namespace Cap10Exceptionhandling
             return false;
         }
 
-        public bool EvaluarLinea(char a, char b, char c, char letra)
+        public bool EvaluarLinea(char a, char b, char c, char letra)//compara si lo que existe en el array es egual a letra,
         {
             return (a == letra && b == letra && c == letra);
         }
