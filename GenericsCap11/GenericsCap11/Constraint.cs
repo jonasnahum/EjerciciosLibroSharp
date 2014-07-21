@@ -32,7 +32,7 @@ namespace GenericsCap11
 
     public class FabricaDeCarros
     {
-        public T ConstruirCarro<T>(string color, int puertas) where T : AutoBase, new()//constrint obliga a que T herede de Autobase y tenga un constructor vacio, para poder hacer objetos en el cuerpo de este metodo.
+        public T ConstruirCarro<T>(string color, int puertas) where T : AutoBase, new()//constrint obliga a que T herede de Autobase y tenga un constructor vacio osea new(), para poder hacer objetos en el cuerpo de este metodo.
         {
             T  auto = new T();
             auto.Color = color;
