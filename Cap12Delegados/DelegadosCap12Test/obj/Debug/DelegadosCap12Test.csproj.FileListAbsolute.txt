@@ -1,0 +1,7 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap12Delegados\DelegadosCap12Test\obj\Debug\DelegadosCap12Test.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap12Delegados\DelegadosCap12Test\bin\Debug\DelegadosCap12Test.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap12Delegados\DelegadosCap12Test\bin\Debug\DelegadosCap12Test.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap12Delegados\DelegadosCap12Test\bin\Debug\Cap12Delegados.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap12Delegados\DelegadosCap12Test\bin\Debug\Cap12Delegados.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap12Delegados\DelegadosCap12Test\obj\Debug\DelegadosCap12Test.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap12Delegados\DelegadosCap12Test\obj\Debug\DelegadosCap12Test.pdb
