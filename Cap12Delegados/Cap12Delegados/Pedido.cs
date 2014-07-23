@@ -10,7 +10,7 @@ namespace Cap12Delegados
     {
         public delegate decimal ObtenerPrecio(Pedido p);//delegate, valor de retorno, nombre del metodo y parametros.
         public int Garrafones { get; set; }
-        public decimal CalcularTotal(ObtenerPrecio metodo)//se esta implementando la firma de Obtener precio, metodo que regresa un decimal y recibe un pedido. se esta mandando llamar un metodo con las caracteristicas del delegado.// aqui es una variable de tipo delegado, que guarda un metodo.
+        public decimal CalcularTotal(ObtenerPrecio metodo)//variable de tipo delegado, que guarda un metodo.//se esta implementando la firma de Obtener precio, metodo que regresa un decimal y recibe un pedido. se esta mandando llamar un metodo con las caracteristicas del delegado.//
         {
             return metodo(this);//parentesis ehecutan el metodo que se recibe como parametro, y this, es el parametro del mettodo CalcularPrecio.
         }                       //this hace referencia a un objeto, a una instancia de clase Pedido, en este caso ped, la cual tiene el no. de Garrafones para que CalcularPrecio trabaje.
