@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap13Events\Cap13Events\obj\Debug\Cap13Events.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap13Events\Cap13Events\bin\Debug\Cap13Events.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap13Events\Cap13Events\bin\Debug\Cap13Events.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap13Events\Cap13Events\obj\Debug\Cap13Events.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap13Events\Cap13Events\obj\Debug\Cap13Events.pdb

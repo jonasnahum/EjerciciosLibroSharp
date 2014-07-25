@@ -40,15 +40,15 @@ namespace DelegadosCap12Test
             {
                 return (x + y) - Z;
             };
-            ejemplo.M2 = delegate(string a, string b)//variable de tipo delegado que se guarda en M2//aqui es un metodo declarado inline, no se mandan valores, adem[as es un metodo anonimo.cumple con el delegado de M2.
+            ejemplo.M2 = delegate(string a, string b)//variable de tipo delegado M2//aqui es un metodo declarado inline, no se mandan valores, adem[as es un metodo anonimo.cumple con el delegado de M2.
             {
                 return a + b;
             };//lleva ; porque es una sola linea toda la implementacion.
-            ejemplo.M3 = ImprimirEnConsola;//variable de tipo delegado que se guarda en M3.
+            ejemplo.M3 = ImprimirEnConsola;//variable de tipo delegado que recibe un metodo en forma de variable.
             Z = 0;//variales capture,..
 
-            int resultadoSuma = ejemplo.M1(10, 12);//se pasan los valores a la variable de tipo delegado que a su vez, se va a guardar en M1.
-            string resultString = ejemplo.M2("jonas", "nahum");//se pasan los valores a la variable de tipo delegado que se va a guardar en M2.
+            int resultadoSuma = ejemplo.M1(10, 12);//se pasan los valores a l metodo a su vez, se van a guardar en variable de tipo delegado M1.
+            string resultString = ejemplo.M2("jonas", "nahum");//se pasan los valores al metodo que se guarda en M2.
             ejemplo.M3("Hola");
 
             Assert.AreEqual(22, resultadoSuma);
@@ -56,18 +56,18 @@ namespace DelegadosCap12Test
         }
         [TestMethod]
         public void EjemplosDelegadosSystemDefined()
-        {//las variables de tipo delegado son la implementacion del metodo que cumple con la firma.
+        {//las variables de tipo delegado guardan la implementacion del metodo que cumple con la firma.
             int Z = 1;//esta variable puede ser llamada dentro de un metodo, pero no alrevez, mas adelante, cambia su valor, y por lo tanto, no afecta el metodo en donde se usa.
             DelegadosEjemploSystemDefined ejemplo = new DelegadosEjemploSystemDefined();//un objeto de la clase.
-            ejemplo.M1 = delegate(int x, int y) //estos son los parametros.//variable de tipo delegado//se pasa el metodo que va a guardar M1// delegate suple al nombre del metodo, este es un delegado anonimo, no tiene nombre, y hace su implementacion.
+            ejemplo.M1 = delegate(int x, int y) //estos son los parametros.//variable de tipo delegado M1//se pasa el metodo que va a guardar M1// delegate suple al nombre del metodo, este es un delegado anonimo, no tiene nombre, y hace su implementacion.
             {
                 return (x + y) - Z;//este es el cuerpo del metodo
             };
-            ejemplo.M2 = delegate(string a, string b)//variable de tipo delegado que se guarda en M2//aqui es un metodo declarado inline, adem[as es un metodo anonimo.cumple con el delegado de M2.
+            ejemplo.M2 = delegate(string a, string b)//variable de tipo delegado M2//aqui es un metodo declarado inline, adem[as es un metodo anonimo.cumple con el delegado de M2.
             {
                 return a + b;
             };//lleva ; porque es una sola linea toda la implementacion.
-            ejemplo.M3 = ImprimirEnConsola;//variable de tipo delegado que se guarda en M3.sin parentesis porque es variable.
+            ejemplo.M3 = ImprimirEnConsola;//variable de tipo delegado  M3.sin parentesis se pasa el metodo porque es variable.
             Z = 0;//variales capture,..
 
             int resultadoSuma = ejemplo.M1(10, 12);//se pasan los valores a la variable de tipo delegado que a su vez, se va a guardar en M1.
@@ -82,14 +82,14 @@ namespace DelegadosCap12Test
         {
 
             DelegadosEjemploSystemDefined ejemplo = new DelegadosEjemploSystemDefined();//se hace un objeto de la clase.
-            ejemplo.M1 = (int primer, int seg) => primer + seg;//lambda entre parentesis, los parametros, la flechita equivale al return, despues esta el cuerpo del metodo.//una variable que se guarda en M1 y este a su vez es la firma.
+            ejemplo.M1 = (int primer, int seg) => primer + seg;//lambda entre parentesis, los parametros, la flechita equivale al return, despues esta el cuerpo del metodo.//una metodo que se guarda en M1 y este a su vez es la firma.
 
             ejemplo.M2 = (string uno, string dos) => uno + dos;
-            ejemplo.M3 = x => ImprimirEnConsola(x);//cuando es un solo parametro se pueden omitir los parentesis y el tipo de dato, en este caso, el cuerpo del metodo es un metodo que cumple con la firma.
+            ejemplo.M3 = x => ImprimirEnConsola(x);//cuando es un solo parametro se pueden omitir los parentesis y el tipo de dato, en este caso, el cuerpo del metodo es un metodo que cumple con la firma y se guarda en M3 que es la variable de tipo delegado.
 
-            int resultadoSuma = ejemplo.M1(10, 12);//se pasan los valores a la variable de tipo delegado que a su vez, se va a guardar en M1.
-            string resultString = ejemplo.M2("jonas", "nahum");//se pasan los valores a la variable de tipo delegado que se va a guardar en M2.
-            ejemplo.M3("Hola");
+            int resultadoSuma = ejemplo.M1(10, 12);//se pasan los valores a la variable de tipo delegado.
+            string resultString = ejemplo.M2("jonas", "nahum");//se pasan los valores a la variable de tipo delegado.
+            ejemplo.M3("Hola");//se pasan los valores a la variable de tipo delegado.
 
             Assert.AreEqual(22, resultadoSuma);
             Assert.AreEqual("jonasnahum", resultString);
@@ -102,7 +102,7 @@ namespace DelegadosCap12Test
             string espero = "hola";
             Assert.AreEqual(espero, ConvertirAminusculas("HOLA"));
 
-            Action<string> ImprimirAconsola;//Action no regresa nada.
+            Action<string> ImprimirAconsola;//Action no regresa nada.//nomas tiene parametro.
             ImprimirAconsola = x => System.Diagnostics.Debug.Print(x);
             ImprimirAconsola("hola jonas");
 
@@ -110,8 +110,8 @@ namespace DelegadosCap12Test
             ObtenerHoraActual = () => DateTime.Now.ToString();//cuando no recibe nada, ningun parametro, los parentesis si son obligatorios.
             System.Diagnostics.Debug.Print(ObtenerHoraActual());
 
-            Func<int, int, decimal> Dividir;
-            Dividir = (int arriba, int numerando) => arriba / numerando;
+            Func<int, int, decimal> Dividir;//firma. recibe dos parametros, y decimal, el ultimo tipoo entre<>, es el valor de retorno.
+            Dividir = (int arriba, int numerando) => arriba / numerando;//metodo lambda.
             decimal result = Dividir(10, 2);
             decimal resultadoEsperado = 5;
             Assert.AreEqual(resultadoEsperado, result);
@@ -135,20 +135,20 @@ namespace DelegadosCap12Test
             string LoqueEspero = "jonas nahum";
             Assert.AreEqual(LoqueEspero, variableMethodo);
 
-            EscribirNombreCompleto NombreCombleto1;
+            EscribirNombreCompleto NombreCombleto1;//es una variable, de tipo delegado, que guarda un metodo.
             NombreCombleto1 = delegate(string nombre, string apellido)//delegado anonimo.
             {
-                return string.Format("{0} {1}", nombre, apellido);
+                return string.Format("{0} {1}", nombre, apellido);//el cuerpo del metodo, que se guarda en la variable de tipo delegado.
             };
 
-            EscribirNombreCompleto NombreCompleto2 = NombreCompletoCualquierNombre;//un metodo.
+            EscribirNombreCompleto NombreCompleto2 = NombreCompletoCualquierNombre;//el metodo CualquierNOmbre, se guarda en la variable de tipo delegado, el metodo cumple con la firma y no lleva parentesis.
             string resultadomet = NombreCompleto2("jonas", "jimenez");
             string miRespuesta = "jonas jimenez";
             Assert.AreEqual(resultadomet, miRespuesta);
 
 
         }
-        public string NombreCompletoCualquierNombre(string nombre, string apellido)
+        public string NombreCompletoCualquierNombre(string nombre, string apellido)//metodo que se guarda en NOmbreCompleto y cumple con la firma del delegado.
         {
             return string.Format("{0} {1}", nombre, apellido);
         }
@@ -158,7 +158,7 @@ namespace DelegadosCap12Test
         public void ExpressionTreeTest()
         {
             ExpressionTreeBuilder builder = new ExpressionTreeBuilder();
-            Expression<Func<int, int, int>> expresionTree = builder.SumarEnteros();
+            Expression<Func<int, int, int>> expresionTree = builder.SumarEnteros();//el metodo sumar enteros se va a guardar en la variable expresion trees de tipo Expression<Func<int, int, int>> 
 
             Func<int, int, int> metodo = expresionTree.Compile();
 
@@ -173,6 +173,6 @@ namespace DelegadosCap12Test
             decimal espero = 2.5M;
             Assert.AreEqual(espero, result);
         }
-    }//funtion, action y delegate son lo mismo y lambda,metodo,y delegado anonimo son lo mismo.
+    }//funtion, action y delegate son lo mismo, son firmas y lambda,metodo,y delegado anonimo son lo mismo, metodos que se guardan en variables.
 
 }

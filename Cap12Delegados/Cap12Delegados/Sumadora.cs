@@ -26,7 +26,7 @@ namespace Cap12Delegados
     }
 
     public class DelegadosEjemploSystemDefined
-    {
+    {//estas son firmas, tipos de dato que guardan un metodo.
         public Func<int, int, int> M1 { get; set; }// los dos primeros son los parametros en el orden en el que aparecen. el ultimo int es el valor de retorno// esta linea es igual apublic Cap12Delegados.Sumadora.SumarDosEnteros M1 { get; set; }.
         public Func<string, string, string> M2 { get; set; }//cumple con contrato de ISumadora.
         public Action<string> M3 { get; set; }//el primero es el tipo que recibe.
