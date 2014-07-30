@@ -51,10 +51,12 @@ namespace Cap13Events
             }
  
         }
+
+        //diferentes formas de declarar un evento.
         public event EventHandler OnCreatedClass;// primero nombre del delegado y luego, nombre del evento.
 
-        public event MethodHandler OnMethodCalled;
-        public delegate void MethodHandler(object setnder, System.EventArgs args);
+        public event MethodHandler OnMethodCalled;//nombre del evento
+        public delegate void MethodHandler(object setnder, System.EventArgs args);//nombre del delegado.
 
         public event EventHandler<PropertyArgs> OnPropertyGet;
 

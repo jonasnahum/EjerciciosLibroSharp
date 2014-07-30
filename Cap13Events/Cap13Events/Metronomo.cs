@@ -33,19 +33,19 @@ namespace Cap13Events
 
         //declarar evento
         public event TickHandler Tick;
-        public delegate void TickHandler(MetronomeMachine m, MetronomeArgs e);
+        public delegate void TickHandler(MetronomeMachine m, MetronomeArgs e);//el primer parametro es la clase desde donde se emite el evento, el sender, y el segundo deriva de args, y en esta clase, si se quiere, se guardan algunas variables que quieran ser enviadas como parametro.
         //public event EventHandler<MetronomeArgs> Tick; equivale a las dos lineas previas
         
         public void Start()
         {
-            while (IntervalCount > 0)
+            while (IntervalCount > 0)//si el numero de vecesaejecutarse es> que 0.
             {
-                System.Threading.Thread.Sleep(IntervalDuration);
-                if (Tick != null)// siempre checar q no es nulo antes de lanzar evento
+                System.Threading.Thread.Sleep(IntervalDuration);// durar tal cantidad de tiempo en milisegundos.
+                if (Tick != null)// siempre checar q no es nulo antes de lanzar evento debido a la inmutabiliad.
                 {
-                    Tick(this, new MetronomeArgs(IntervalCount)); //lanzar evento
+                    Tick(this, new MetronomeArgs(IntervalCount)); //lanzar evento los parametros son this, esta clase, y metronomeArgs, que se guarda en una variable dentro de la clase MetronomeArgs y se convierte en CurrentInterval. esta ultima clase siempre tiene que derivar de EventArgs. y se utiliza asi para guardar variables que quieran ser enviadas como parametros a la hora de disparar el evento.
                 }
-                IntervalCount--;
+                IntervalCount--;//como es un loop que itera a lo largo de IntervaleCount, se va disminuyendo este numero con cada iteracion, hasta completar todos los eventos indicados.
             }
         }
     }
@@ -70,10 +70,10 @@ namespace Cap13Events
 
         public void Subscribe(MetronomeMachine m)
         {
-            m.Tick += EmitSound;
+            m.Tick += EmitSound;//suscribe la variable EmitSound al evento Tick.
         }
 
-        private void EmitSound(MetronomeMachine m, MetronomeArgs e)
+        private void EmitSound(MetronomeMachine m, MetronomeArgs e)//metodo que cumple con el delegado del evento., recibe un sender, de donde se emite el evento y un arg.
         {
             Console.Beep(Frequency, Duration);
         }

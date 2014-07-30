@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap14StandarQueryOperator\Cap14StandarQueryOperator\bin\Debug\Cap14StandarQueryOperator.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap14StandarQueryOperator\Cap14StandarQueryOperator\bin\Debug\Cap14StandarQueryOperator.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap14StandarQueryOperator\Cap14StandarQueryOperator\obj\Debug\Cap14StandarQueryOperator.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap14StandarQueryOperator\Cap14StandarQueryOperator\obj\Debug\Cap14StandarQueryOperator.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap14StandarQueryOperator\Cap14StandarQueryOperator\obj\Debug\Cap14StandarQueryOperator.pdb
