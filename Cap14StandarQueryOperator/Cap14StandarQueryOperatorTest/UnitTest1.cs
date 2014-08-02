@@ -247,19 +247,9 @@ namespace Cap14StandarQueryOperatorTest
         }
         [TestMethod]
         public void JoinOperators()
-        {//one to many.//un salon a varios alumnos.
+        {//one to many.//un salon a varios alumnos.//este es para sacar el Inner.
             IEnumerable<Alumno> todosLosAlumnos = Alumno.ObtenerAlumnos();
             IEnumerable<Salon> todosLosSalones = Salon.ObtenerSalones();
-            //var grupo = todosLosAlumnos.Join(todosLosSalones,//todos los alumnos hacen join con todos los salones. 
-            //    a => a.IdSalon,//foreing key, porque el id esta es el numero de salon y el salon es una caracteristica externa, que esta en salon no aqui en alumno.
-            //    s => s.Id, //primary key, porque el id identifica a cada uno de los elementos de salon y con base en este, se agrupan los alumnos.
-            //    (a, s) => new
-            //    { //aqui ha mandado todos los elementos que se pudieron juntar con el join, para hacer una proyeccion.,se hace una clase anonyma.
-            //        Alumno = a,
-            //        Salon = s,
-            //    });//la variable grupo, al final tiene un IEnumerable de esta clase anonyma.
-            //Debug.Print("-------------------Inner Join-----------------------------------");
-            //Print(grupo.Select(anonymo=>string.Format("{0}-{1}",anonymo.Alumno.ToString(),anonymo.Salon.ToString())));
             var grupo = todosLosAlumnos.Join(todosLosSalones,//first secuence(inner)                inner, to join to the firstsecuence.
                 a => a.IdSalon,//OuterKeySelector. a funcion to extract the join key from each element of the first secuence.
                 s=>s.Id,//innerKeySelector a funtion to extract the join key from each element of the second secuence.
@@ -268,10 +258,10 @@ namespace Cap14StandarQueryOperatorTest
                         Alumno = a,
                         Salon = s,
                     });
-            Debug.Print("-------------------Inner Join-----------------------------------");
+            Debug.Print("-------------------Inner Join-----------------------------------");// solo trabaja con lo de adentro de circulo.
             Print(grupo.Select(anonymo => string.Format("{0}-{1}", anonymo.Alumno.ToString(), anonymo.Salon.ToString())));
 
-            Debug.Print("-------------------Right Join-----------------------------------");            
+            Debug.Print("-------------------Right Join-----------------------------------");//esta es una formula para sacar el rightOuter.            
             var rightResult = todosLosSalones.GroupJoin(todosLosAlumnos,
             s => s.Id,
             a => a.IdSalon,
@@ -280,10 +270,9 @@ namespace Cap14StandarQueryOperatorTest
                 Alumnos = alumnos,
                 Salon = s//right result, la variable, tiene un IEnumerable de objetos de esta clase anonyma, cada objeto, tendra estas dos propiedades.
             });
+            Print(rightResult.Where(it => it.Alumnos.Count() == 0).Select(it=>it.Salon));//buscar en cada objeto de la clase anonyma en donde sus alumnos=(un objeto salon se relaciona con sus alumnos, pero el salon 4 no hace match con ningun alumno, entonces tiene 0 alumnos y es outerright), de esa lista hacer una proyeccion e imprime los salones los salones.
 
-            Print(rightResult.Where(it => it.Alumnos.Count() == 0).Select(it=>it.Salon));//buscar en cada objeto de la clase anonyma en donde sus alumnos=0, de esa lista hacer una proyeccion y sacar los salones.
-
-            Debug.Print("-------------------Left Join-----------------------------------");
+            Debug.Print("-------------------Left Join-----------------------------------");//formula para sacar el leftOuter
             var leftJoint = todosLosAlumnos.GroupJoin(todosLosSalones,
             a => a.IdSalon,
             s => s.Id,
@@ -293,6 +282,48 @@ namespace Cap14StandarQueryOperatorTest
                 Alumno = a
             });
             Print(leftJoint.Where(classAnonym => classAnonym.Salones.Count() == 0).Select(classAnonym => classAnonym.Alumno));//solovino y pantera si tienen salon, pero sus Key selector no encuentra relacion con un salon.
+        }
+        [TestMethod]
+        public void GroupByOperator()
+        {//hace subgrupos de una coleccion, segun el criterio lambda.
+            IEnumerable<Alumno> alumnos = Alumno.ObtenerAlumnos();//una colleccion.
+            IEnumerable<IGrouping<int, Alumno>> agrupados;//aqui se guardan subconjuntos de la colleccion alumnos, agrupados por su grupo Id. cada oobjeto de esta colleccion es de tipo Alumno, tiene un key(int), pertenece a un grupo, y a una lista de grupos.
+            agrupados = alumnos.GroupBy(a => a.IdSalon);//agrupar segun este criterio.
+            foreach (IGrouping<int, Alumno> item in agrupados)//IGrouping<int, Alumno> este es el tipo para cada item, agrupados es IEnumerable.
+            {
+                Debug.Print("-------------------Alumnos en grupo {0}-----------------------------------",item.Key);
+                Print(item);//item hereda de IEnumerable.
+            }
+        }
+        [TestMethod]
+        public void GroupJoin()
+        {//es lo mismo que gruop by , pero aqui intervienen objetos de dos colecciones diferentes.
+            IEnumerable<Alumno> alumnos = Alumno.ObtenerAlumnos();
+            IEnumerable<Salon> salones = Salon.ObtenerSalones();
+            var grupos = salones.GroupJoin(alumnos, s => s.Id, a => a.IdSalon, 
+                (s, todosLosAlumnos)//////////////////////////////////////////////checar que esto sea general en todas las implementaciones...este ya es el resultado combinado, s es cada salon, todoslosalumnos son todos los alumnos de ese salon. el group join, hace grupos entre dos colecciones. 
+                    => new { Salon = s, Alumnos = todosLosAlumnos });
+            
+            foreach (var item in grupos)//var porque son anonymos.
+            {
+                Debug.Print("-------------------Alumnos en grupo {0}-----------------------------------", item.Salon.Id);
+                Print(item.Alumnos);
+            }
+
+        }
+        [TestMethod]
+        public void SelectMany()
+        {//muchas colecciones de un mismo tipo, las integra una sola coleccion.
+            IEnumerable<Alumno> alumnos = Alumno.ObtenerAlumnos();//una colleccion.
+            IEnumerable<IGrouping<int, Alumno>> agrupados;//aqui se guardan subconjuntos de la colleccion alumnos, agrupados por su grupo Id. cada oobjeto de esta colleccion es de tipo Alumno, tiene un key(int), pertenece a un grupo, y a una lista de grupos.
+            agrupados = alumnos.GroupBy(a => a.IdSalon);//agrupar segun este criterio.//lista de grupos de alumnos.
+
+            IEnumerable<Alumno> desagrupados;
+            desagrupados = agrupados.SelectMany(grupo => grupo);
+            Debug.Print("-------------------Todos los Alumnos de todos los  grupos -----------------------------------");  
+            Print(desagrupados);
+
+
         }
     }
 }
