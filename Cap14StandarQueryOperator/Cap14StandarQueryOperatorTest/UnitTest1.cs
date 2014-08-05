@@ -265,7 +265,7 @@ namespace Cap14StandarQueryOperatorTest
             var rightResult = todosLosSalones.GroupJoin(todosLosAlumnos,
             s => s.Id,
             a => a.IdSalon,
-            (s, alumnos) => new//hay objetos combinados cada uno tiene salon y alumno. aqui ya esta la proyeccion en la cual cada salon ya tiene sus alumnos.estan agrupados en base a su propiedad comun.
+            (s, alumnos) => new//aqui ya estan los objetos combinados cada uno tiene salon y alumno. aqui ya esta la proyeccion en la cual cada salon ya tiene sus alumnos.estan agrupados en base a su propiedad comun.
             {
                 Alumnos = alumnos,
                 Salon = s//right result, la variable, tiene un IEnumerable de objetos de esta clase anonyma, cada objeto, tendra estas dos propiedades.
@@ -286,12 +286,12 @@ namespace Cap14StandarQueryOperatorTest
         [TestMethod]
         public void GroupByOperator()
         {//hace subgrupos de una coleccion, segun el criterio lambda.
-            IEnumerable<Alumno> alumnos = Alumno.ObtenerAlumnos();//una colleccion.
+            IEnumerable<Alumno> alumnos = Alumno.ObtenerAlumnos();//una colleccion.Alumno.ObtenerAlumnos(), asi se llama al metodo de la clase generica.
             IEnumerable<IGrouping<int, Alumno>> agrupados;//aqui se guardan subconjuntos de la colleccion alumnos, agrupados por su grupo Id. cada oobjeto de esta colleccion es de tipo Alumno, tiene un key(int), pertenece a un grupo, y a una lista de grupos.
-            agrupados = alumnos.GroupBy(a => a.IdSalon);//agrupar segun este criterio.
+            agrupados = alumnos.GroupBy(a => a.IdSalon);//agrupar los alumnos segun este criterio y guardarlos en agrupados. la a representa cada elemento de la lista de alumnos
             foreach (IGrouping<int, Alumno> item in agrupados)//IGrouping<int, Alumno> este es el tipo para cada item, agrupados es IEnumerable.
             {
-                Debug.Print("-------------------Alumnos en grupo {0}-----------------------------------",item.Key);
+                Debug.Print("-------------------Alumnos en grupo {0}-----------------------------------",item.Key);//imprimir el key com[un.
                 Print(item);//item hereda de IEnumerable.
             }
         }
@@ -301,7 +301,7 @@ namespace Cap14StandarQueryOperatorTest
             IEnumerable<Alumno> alumnos = Alumno.ObtenerAlumnos();
             IEnumerable<Salon> salones = Salon.ObtenerSalones();
             var grupos = salones.GroupJoin(alumnos, s => s.Id, a => a.IdSalon, 
-                (s, todosLosAlumnos)//////////////////////////////////////////////checar que esto sea general en todas las implementaciones...este ya es el resultado combinado, s es cada salon, todoslosalumnos son todos los alumnos de ese salon. el group join, hace grupos entre dos colecciones. 
+                (s, todosLosAlumnos)//este ya es el resultado combinado, s es cada salon, todoslosalumnos son todos los alumnos de ese salon. el group join, hace grupos entre dos colecciones. 
                     => new { Salon = s, Alumnos = todosLosAlumnos });
             
             foreach (var item in grupos)//var porque son anonymos.
@@ -319,11 +319,40 @@ namespace Cap14StandarQueryOperatorTest
             agrupados = alumnos.GroupBy(a => a.IdSalon);//agrupar segun este criterio.//lista de grupos de alumnos.
 
             IEnumerable<Alumno> desagrupados;
-            desagrupados = agrupados.SelectMany(grupo => grupo);
+            desagrupados = agrupados.SelectMany(grupo => grupo);//grupo es cada elemento en agrupados, el cual tiene la implementacion grupo, es decir ir juntando los grupos en una lista.
             Debug.Print("-------------------Todos los Alumnos de todos los  grupos -----------------------------------");  
             Print(desagrupados);
 
 
         }
+
+        [TestMethod]
+        public void SelectMany1()
+        {
+            List<List<int>> array = new List<List<int>>();//una lista de listas de tipo int.
+            List<int> nones = new List<int>() { 1, 3, 5, 7, 9 };//se declara y asigna una lista de tipo int
+            List<int> pares = new List<int>() { 2, 4, 6, 8, 10 };//se declara y asigna otra lista de tipo int.
+            array.Add(nones);//nones se asigna a la lista de listas.
+            array.Add(pares);//pares se asigna a la lista de listas.
+            
+            int[] todosLosNumeros = array.SelectMany(lista => lista).ToArray();//lista es cada elemento dentro de array lo va a pasar a una lista general. la va a convertir en array y la va a guardar en la variiable todos los numeros que es un array.
+            Debug.Print("-------------------pares y nones-----------------------------------");
+            Print(todosLosNumeros);
+        }
+
+        [TestMethod]
+        public void SelectMany2()
+        {
+            List<string> lista = new List<string>() { "hola", "coco", "casa", "el", "la", "para", "bote" };//una lista de tipo string que se llama lista.
+            IEnumerable<IGrouping<int, string>> ordenadosPorLongitud = lista.GroupBy(palabra => palabra.Length);//cada palabra en la lista, va obtener su lenght  y las va agrupar por su lenght y esto lo va a guardar en OrdenadosPorlongitud la variale.//cada elemento de esta coleccion es de tipo string, tiene un int que es su key, eso significa<int,string>
+
+            List<IGrouping<int, string>> gruposDePalabras = ordenadosPorLongitud.ToList();//<IGrouping<int, string>> significa que son grupos ordenados en su key por un int y que cada elemento es un string.
+            Debug.Print("-------------------cuatro letras-----------------------------------");
+            Print(gruposDePalabras[0]);
+
+            Debug.Print("-------------------dos letras-----------------------------------");
+            Print(gruposDePalabras[1]);
+        }
+
     }
 }

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cap15LInqQueryExpressions", "Cap15LInqQueryExpressions\Cap15LInqQueryExpressions.csproj", "{5A31EF7F-A038-492C-BD14-E234600A4B9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQqueryExpressionsTest", "LinQqueryExpressionsTest\LinQqueryExpressionsTest.csproj", "{D446C183-9D87-48DB-AC17-5FFED87F4758}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A31EF7F-A038-492C-BD14-E234600A4B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A31EF7F-A038-492C-BD14-E234600A4B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A31EF7F-A038-492C-BD14-E234600A4B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A31EF7F-A038-492C-BD14-E234600A4B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D446C183-9D87-48DB-AC17-5FFED87F4758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D446C183-9D87-48DB-AC17-5FFED87F4758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D446C183-9D87-48DB-AC17-5FFED87F4758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D446C183-9D87-48DB-AC17-5FFED87F4758}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap15LInqQueryExpressions\LinQqueryExpressionsTest\bin\Debug\LinQqueryExpressionsTest.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap15LInqQueryExpressions\LinQqueryExpressionsTest\bin\Debug\LinQqueryExpressionsTest.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap15LInqQueryExpressions\LinQqueryExpressionsTest\bin\Debug\Cap15LInqQueryExpressions.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap15LInqQueryExpressions\LinQqueryExpressionsTest\bin\Debug\Cap15LInqQueryExpressions.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap15LInqQueryExpressions\LinQqueryExpressionsTest\obj\Debug\LinQqueryExpressionsTest.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap15LInqQueryExpressions\LinQqueryExpressionsTest\obj\Debug\LinQqueryExpressionsTest.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap15LInqQueryExpressions\LinQqueryExpressionsTest\obj\Debug\LinQqueryExpressionsTest.pdb
