@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cap16CustomCollections", "Cap16CustomCollections\Cap16CustomCollections.csproj", "{9DF52FCD-218B-4F64-B8A4-8FB4447D5D46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCollectionsTest", "CustomCollectionsTest\CustomCollectionsTest.csproj", "{CDEDCC7A-104B-49C3-ABE1-02C50B4E00E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DF52FCD-218B-4F64-B8A4-8FB4447D5D46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF52FCD-218B-4F64-B8A4-8FB4447D5D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF52FCD-218B-4F64-B8A4-8FB4447D5D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF52FCD-218B-4F64-B8A4-8FB4447D5D46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDEDCC7A-104B-49C3-ABE1-02C50B4E00E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEDCC7A-104B-49C3-ABE1-02C50B4E00E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEDCC7A-104B-49C3-ABE1-02C50B4E00E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEDCC7A-104B-49C3-ABE1-02C50B4E00E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

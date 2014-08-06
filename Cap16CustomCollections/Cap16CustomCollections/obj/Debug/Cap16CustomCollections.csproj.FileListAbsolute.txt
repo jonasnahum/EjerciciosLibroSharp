@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap16CustomCollections\Cap16CustomCollections\bin\Debug\Cap16CustomCollections.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap16CustomCollections\Cap16CustomCollections\bin\Debug\Cap16CustomCollections.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap16CustomCollections\Cap16CustomCollections\obj\Debug\Cap16CustomCollections.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap16CustomCollections\Cap16CustomCollections\obj\Debug\Cap16CustomCollections.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap16CustomCollections\Cap16CustomCollections\obj\Debug\Cap16CustomCollections.pdb
