@@ -154,29 +154,29 @@ namespace CustomCollectionsTest
         public IEnumerable<int> GetPares(int limite) 
         {
             int inicial = 0;
-            while (inicial % 2 == 0 && inicial <= limite) 
+            while (inicial % 2 == 0 && inicial <= limite)//mientras inicial se pueda dividir entre dos y resulte 0. 
             {
-                yield return inicial += 2;
+                yield return inicial += 2;//producir inicial +2 y retornarla.
             }
         }
-        public IEnumerable<char> GetAbecedario()
+        public IEnumerable<char> GetAbecedario()//este metodo regresa un IEnumerable<char>.
         {
-            char a = 'a';
-            int inicial = (int)a;
-            int final = inicial + 26;
+            char a = 'a';//se guarda un caracter en la variable a.
+            int inicial = (int)a;//el caracter se convierte a int y se guarda en inicial.
+            int final = inicial + 26;//se define el final, porque las letras del abecedario son 26.
             while (inicial < final)
             {
-                yield return (char)inicial;//lista que requiere cierta logica en su construccion
-                inicial++;
+                yield return (char)inicial;//producir y retornar la inicial convertida en numero.
+                inicial++;//ir aumentando la inicial.
             }
         }
         public IEnumerable<int> EjemploSimpleYieldBreak(int iterciones)
         {            
             int i = 1;
-            while (true)
+            while (true)//osea siempre estar iterando hasta yield break.
             {
-                yield return i;
-                i++;
+                yield return i;//regresar 1.
+                i++;//ir aumentando i.
 
                 if (iterciones == i) 
                 {
@@ -185,12 +185,13 @@ namespace CustomCollectionsTest
             } 
             
         }
-        public IEnumerable<DateTime> ObtenerFinesDeSemana(DateTime inicio, DateTime fin)//construir lista de fechas.
+        public IEnumerable<DateTime> ObtenerFinesDeSemana(DateTime inicio, DateTime fin)//producir un IEnumerable<DateTime> .construir lista de fechas.
         {
             DateTime apuntador = inicio;
-            
-            while (apuntador < fin) {
-                bool esFinDeSemana = apuntador.DayOfWeek == DayOfWeek.Sunday || apuntador.DayOfWeek == DayOfWeek.Saturday;
+
+            while (apuntador < fin)////apuntador va recorriendo entre inicio y fecha de fin. 
+            {
+                bool esFinDeSemana = apuntador.DayOfWeek == DayOfWeek.Sunday || apuntador.DayOfWeek == DayOfWeek.Saturday;//regresar true si es sabado o domingo.
                                
                 if (esFinDeSemana) 
                 { 
@@ -205,23 +206,22 @@ namespace CustomCollectionsTest
 
 
         [TestMethod]
-        public void YieldTest()//construye de manera automatica e interna una clase que implementa IEnumerable.
+        public void YieldTest()//construye de manera automatica e interna una clase que a su vez tiene datos y que implementa IEnumerable.
         {//cuando se quiere hacer una lista de tipo IEnumerable que requiere cierta logica.. la produce de manera automatica.
             IEnumerable<string> miEnumerator = new MiIEnumerable();//IEnumerable es un contrato general por lo tanto se puede transformar un muchos tipos de lista.
             IEnumerable<string> yieldEnumator = GetStrings();
-            Print(miEnumerator, "mi Enumerator");
-            Print(yieldEnumator, " Yield Enumerator");
+            Print(miEnumerator, "mi Enumerator");//aqui se tubo que hacer toda una clase para obtener datos IEnumerable.
+            Print(yieldEnumator, " Yield Enumerator");//la clase se hizo internamente y automaticamente con yield.
             IEnumerable<int> pares = GetPares(15);
             Print(pares, "Produccion de Numeros Pares Con Yield");
 
-            List<string> otroTipo = miEnumerator.ToList();
+            List<string> otroTipo = miEnumerator.ToList();//IEnumerable se puede convertir a list<>
             int i=-1;
-            Dictionary<int, string> otroTipo1 = miEnumerator.ToDictionary(it => i++);
-            string[] otroTipo2 = miEnumerator.ToArray();
-
+            Dictionary<int, string> otroTipo1 = miEnumerator.ToDictionary(it => i++);//ponerle un int a cada elemento empezando desde 1, y ese es su key, IEnumerable tambien se puede convertir en diccionario.
+            string[] otroTipo2 = miEnumerator.ToArray();//IEnumerable se puede convertir a un array[].
+           
             Print(GetAbecedario(), "Abecedario hecho con Yeld");
-
-
+            
             Print(EjemploSimpleYieldBreak(5), "Lista de Numeros Enteros");
 
             DateTime inicio = new DateTime(2014, 08, 1);
@@ -229,7 +229,7 @@ namespace CustomCollectionsTest
             IEnumerable<DateTime> finesDeSemana = ObtenerFinesDeSemana(inicio, fin);
             Print(finesDeSemana, "Fines de Semana Agosto 1014");
 
-            var diasFinPar = from f in finesDeSemana where f.Day % 2 == 0 select f;//IEnumarable tiene acceso a todos los standart query operators.
+            var diasFinPar = from f in finesDeSemana where f.Day % 2 == 0 select f;//IEnumarable tiene acceso a todos los standart query operators. por eso es tan importante el yield.
             
         }
 
@@ -254,7 +254,7 @@ namespace CustomCollectionsTest
             List<string> palabras = ObtenrePalabras(false);
             List<string> palabrasNulo = ObtenrePalabras(true);
 
-            foreach (var item in palabras)
+            foreach (var item in palabras)//asi no marca error ni exepcion.
             {
                 System.Diagnostics.Debug.Print(item);
             }

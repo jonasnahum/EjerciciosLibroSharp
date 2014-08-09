@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap17ReflecAtribDynamic\Cap17ReflecAtribDynamic\bin\Debug\Cap17ReflecAtribDynamic.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap17ReflecAtribDynamic\Cap17ReflecAtribDynamic\bin\Debug\Cap17ReflecAtribDynamic.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap17ReflecAtribDynamic\Cap17ReflecAtribDynamic\obj\Debug\Cap17ReflecAtribDynamic.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap17ReflecAtribDynamic\Cap17ReflecAtribDynamic\obj\Debug\Cap17ReflecAtribDynamic.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap17ReflecAtribDynamic\Cap17ReflecAtribDynamic\obj\Debug\Cap17ReflecAtribDynamic.pdb
