@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -51,6 +52,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="PrintableAttribute.cs" />
     <Compile Include="TypeDescriptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -30,9 +30,13 @@ namespace Cap17ReflecAtribDynamic
     public class Profesor
     {
         public Profesor() { }
+        [PrintableAttribute("Nombre: ")]
         public string Nombre { get; set; }
+        [Printable("Edad: ")]
         public int Edad { get; set; }
+        [Printable()]
         public string Apellido { get; set; }
+
 
         public void DecirNombre()
         {
@@ -54,23 +58,23 @@ namespace Cap17ReflecAtribDynamic
             }
         }
 
-        public static T CrearInstancia<T>(Dictionary<string, string> propiedades)
-        {
+        public static T CrearInstancia<T>(Dictionary<string, string> propiedades)//metodo recibe un type diccionario generico.
+        {//las instancias tienen informacion del tipo, los metodos y las propiedades....
 
             Type metadatos = typeof(T);//Type tiene los metadatos de toda la clase.
                                                                 // new T();
-            T instance =  (T)Activator.CreateInstance(metadatos);//el activador es para crear una instancia, como si llamara el new o el constructor.
+            T instance =  (T)Activator.CreateInstance(metadatos);//crear una instancia de metadatos.el activador es para crear una instancia, como si llamara el new o el constructor.
 
             foreach (KeyValuePair<string, string> p in propiedades) 
             {
-                int valorEntero = 0;
-                bool esEntero = int.TryParse(p.Value, out valorEntero);
+                int valorEntero = 0;//aqui se guarda el entero si se puede hacer la conversion de abajo.
+                bool esEntero = int.TryParse(p.Value, out valorEntero);//es Entero marca true si se puede hacer la conversion.
                 
                 PropertyInfo propertyInfo = metadatos.GetProperty(p.Key);//Property Info tiene los metadatos de una propiedad. es un metadato pero de una propiedad, que este caso es key.
 
                 if (esEntero)
                 {
-                    propertyInfo.SetValue(instance, valorEntero);// instancia.Property = value;
+                    propertyInfo.SetValue(instance, valorEntero);// equivale a asignar una valor. instancia.Property = value;
                 }
                 else
                 {
