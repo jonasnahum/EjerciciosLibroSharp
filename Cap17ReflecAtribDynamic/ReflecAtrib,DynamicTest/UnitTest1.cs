@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
 using System.Xml;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace ReflecAtrib_DynamicTest
 {
@@ -43,21 +45,20 @@ namespace ReflecAtrib_DynamicTest
             
         }
         //[TestMethod]
-        public void NoTestMethodAttribute ()
+        public void NoTestMethodAttribute ()//gracias al attribute [TestMethod], es que visual studio evalua los asserts .
         {
             Assert.IsTrue(false);
 
         }
         [TestMethod]
         public void AttributeTest()
-        {//para marcar un elemento y o asociarle una funcion extra.
+        {//para marcar un elemento y/o asociarle una funcion extra.
             Profesor alumno = new Profesor();
             alumno.Nombre = "juan";
             alumno.Edad = 17;
             alumno.Apellido = "Escutia";
             TypeDescriptor.GetAttributeInfo(alumno);
         }
-
         public string Serializar<T>(T miObjeto) 
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
@@ -98,12 +99,66 @@ namespace ReflecAtrib_DynamicTest
             persona.Password = "hola";
             
 
-            string objetoSerializado = Serializar(persona);
-            persona = null;
-            System.Diagnostics.Debug.Print(objetoSerializado);
+            string objetoSerializado = Serializar(persona);//se manda un oobjeto persona de tipo Persona al metodo Serializar.
+            persona = null;//se le borran los datos que de sus propiedades: agustin 45, melgar, etc.
+            System.Diagnostics.Debug.Print(objetoSerializado);//imprime los datos que se guardaron en xml.
 
-            Persona persona2 = DeserializarXml<Persona>(objetoSerializado);
+            Persona persona2 = DeserializarXml<Persona>(objetoSerializado);//manda un tipo persona y una variable de tipo string, y la guarda en persona2.
             Assert.AreEqual("Agustin", persona2.Nombre);
         }
+
+        [TestMethod]
+        public void OtroDynamicTest()
+        {
+            Persona persona = new Persona();
+            persona.Nombre = "Agustin";
+            persona.Edad = int.Parse("45");
+            persona.Apellido = "Melgar";
+            persona.Password = "hola";
+
+            string objetoSerializado = Serializar(persona);
+
+            XElement e = XElement.Parse(objetoSerializado);
+            Assert.AreEqual("Agustin",e.Descendants("Nombre").FirstOrDefault().Value);//descendants regresa un ienumerable de nodos nombre, como se pueden repetir o no haber ninguno, que regrese el valor.
+
+
+            dynamic person = DynamicXml.Parse(objetoSerializado);
+            Assert.AreEqual("Agustin", person.Nombre);//es mas legible poner person.Nombre.
+        }
+
+       [TestMethod]
+        public void DynamicTest()
+        {//permite poner metodos y propiedades y tipos aunque no exista, a la hora del runtime es cuando verifica que existan.
+            dynamic data = "hola";            //el tipo original hola, lo compila hasta run time.
+            //System.Diagnostics.Debug.Print(data.ToString());
+            data = (double)data.Length;//cualquier tipo se puede convertir a dynamic.length es in y luego se convierte a double y data guarda double.se puede cambiar de typo, era string y ahora es double.
+            data = data * 3.5 + 28.6;//el resultado de cualquier operacion es de typo dinamic.
+            if (data == 42.6)
+            {
+                Assert.AreEqual(42.6, data);
+            }
+            else 
+            {
+                data.EsteMetodoNoExiste();//este metodo no existe y asi corre el programa.lo compila hasta que aqui llega el thred.
+            }
+
+            Assert.IsNull(default(dynamic));//su valor por default es null, lo que comprueba que es un valor por referencia.
+
+            int usoDeExtensionMethod = "Hola mundo".ObtenerLongitud();//extension method que no funciona en dynamic, hola mundo pasa como parametro al metodo que existe en otra clase. 
+            
+        }
+
     }
+
+    /// <summary>
+    /// Extension Method example.
+    /// </summary>
+    public static class StringExtensions
+    {
+        public static int ObtenerLongitud(this string myString)
+        {
+            return myString.Length;
+        }
+    }
+
 }

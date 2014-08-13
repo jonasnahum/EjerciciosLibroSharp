@@ -30,9 +30,9 @@ namespace Cap17ReflecAtribDynamic
     public class Profesor
     {
         public Profesor() { }
-        [PrintableAttribute("Nombre: ")]
+        [PrintableAttribute("Nombre: ")]//un atributo , en la clase PrintableAttribute, se recibe el parametro "Nomnbre:" y se guarda como prefijo en una propiedad.
         public string Nombre { get; set; }
-        [Printable("Edad: ")]
+        [Printable("Edad: ")]//Printable significa PrintableAttribute, infiere el nombre completo por la convencion de terminar en Attribute.
         public int Edad { get; set; }
         [Printable()]
         public string Apellido { get; set; }

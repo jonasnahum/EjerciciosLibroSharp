@@ -35,8 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -52,6 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
+    <Compile Include="DynamicXml.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="PrintableAttribute.cs" />
     <Compile Include="TypeDescriptor.cs" />

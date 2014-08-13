@@ -58,7 +58,7 @@ namespace Cap17ReflecAtribDynamic
      
             foreach (PropertyInfo item in properties)
             {
-                PrintableAttribute[] attributes = (PrintableAttribute[])item.GetCustomAttributes(typeof(PrintableAttribute), false);
+                PrintableAttribute[] attributes = (PrintableAttribute[])item.GetCustomAttributes(typeof(PrintableAttribute), false);//los los atributos de tipo PrintAttribute que se marcaron en la clase profesor, gruardarlos en la variable atributes.
                 foreach (PrintableAttribute attribute in attributes)
                 {
                     string value = item.GetValue(objeto, null).ToString();

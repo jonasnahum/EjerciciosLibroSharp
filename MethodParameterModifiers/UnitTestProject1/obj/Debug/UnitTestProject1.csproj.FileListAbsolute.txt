@@ -1,0 +1,7 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\MethodParameterModifiers\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\MethodParameterModifiers\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\MethodParameterModifiers\UnitTestProject1\bin\Debug\MethodParameterModifiers.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\MethodParameterModifiers\UnitTestProject1\bin\Debug\MethodParameterModifiers.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\MethodParameterModifiers\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\MethodParameterModifiers\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\MethodParameterModifiers\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
