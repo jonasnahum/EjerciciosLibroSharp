@@ -116,22 +116,22 @@ namespace ReflecAtrib_DynamicTest
             persona.Apellido = "Melgar";
             persona.Password = "hola";
 
-            string objetoSerializado = Serializar(persona);
+            string objetoSerializado = Serializar(persona);//objetoSerialializado contiene objeto persona ya serializado.
 
             XElement e = XElement.Parse(objetoSerializado);
             Assert.AreEqual("Agustin",e.Descendants("Nombre").FirstOrDefault().Value);//descendants regresa un ienumerable de nodos nombre, como se pueden repetir o no haber ninguno, que regrese el valor.
 
 
             dynamic person = DynamicXml.Parse(objetoSerializado);
-            Assert.AreEqual("Agustin", person.Nombre);//es mas legible poner person.Nombre.
+            Assert.AreEqual("Agustin", person.Nombre);//es mas legible poner person.Nombre. y es mejor, si no te toca hacer la clase DynamicXml.
         }
 
        [TestMethod]
         public void DynamicTest()
-        {//permite poner metodos y propiedades y tipos aunque no exista, a la hora del runtime es cuando verifica que existan.
+        {//permite poner metodos y propiedades y tipos aunque no existan, a la hora del runtime es cuando verifica que existan.
             dynamic data = "hola";            //el tipo original hola, lo compila hasta run time.
             //System.Diagnostics.Debug.Print(data.ToString());
-            data = (double)data.Length;//cualquier tipo se puede convertir a dynamic.length es in y luego se convierte a double y data guarda double.se puede cambiar de typo, era string y ahora es double.
+            data = (double)data.Length;//cualquier tipo se puede convertir a dynamic.length es int y luego se convierte a double y data guarda double.se puede cambiar de typo, data era string y ahora es double.
             data = data * 3.5 + 28.6;//el resultado de cualquier operacion es de typo dinamic.
             if (data == 42.6)
             {
@@ -142,9 +142,9 @@ namespace ReflecAtrib_DynamicTest
                 data.EsteMetodoNoExiste();//este metodo no existe y asi corre el programa.lo compila hasta que aqui llega el thred.
             }
 
-            Assert.IsNull(default(dynamic));//su valor por default es null, lo que comprueba que es un valor por referencia.
+            Assert.IsNull(default(dynamic));//su valor por default es null, lo que comprueba que es un valor por referencia. de lo contrario seria 0.
 
-            int usoDeExtensionMethod = "Hola mundo".ObtenerLongitud();//extension method que no funciona en dynamic, hola mundo pasa como parametro al metodo que existe en otra clase. 
+            int usoDeExtensionMethod = "Hola mundo".ObtenerLongitud();//extension method que no funciona en dynamic, hola mundo pasa como parametro al metodo que existe en otra clase. a hola mundo se le aplica un metodo extension. 
             
         }
 
@@ -153,9 +153,9 @@ namespace ReflecAtrib_DynamicTest
     /// <summary>
     /// Extension Method example.
     /// </summary>
-    public static class StringExtensions
+    public static class StringExtensions//su clase debe ser estatica.
     {
-        public static int ObtenerLongitud(this string myString)
+        public static int ObtenerLongitud(this string myString)//el metodo tambien debe ser estatico, se utiliza this
         {
             return myString.Length;
         }

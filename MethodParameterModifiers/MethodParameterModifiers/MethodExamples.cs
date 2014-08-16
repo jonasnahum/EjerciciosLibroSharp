@@ -13,21 +13,21 @@ namespace MethodParameterModifiers
            miEntero = miEntero + 2;
         }
 
-        public int MaximoMinimo(out int max, params int[] array) 
+        public int MaximoMinimo(out int max, params int[] array)//con params, se recibe directamete un array, sin tener que ponerle la palabra new.
         {
             max = array.Max();
             return array.Min();
         }
 
-        public int Edad(int yearOfBirth = 1984)
+        public int Edad(int yearOfBirth = 1984)//si no le mandan parametro, por default pone 1984.
         {
             return DateTime.Now.Year - yearOfBirth;
         }
     }
 
-    public static class Extentions
+    public static class Extentions//clase estatica.
     {
-        public static double Promedio(this int[] calificaciones)
+        public static double Promedio(this int[] calificaciones)//metodo estatico con this.
         {
             return calificaciones.Sum() / calificaciones.Length;
 

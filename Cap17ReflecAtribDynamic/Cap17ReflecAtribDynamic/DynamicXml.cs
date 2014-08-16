@@ -19,11 +19,11 @@ namespace Cap17ReflecAtribDynamic
         {
             return new DynamicXml(XElement.Parse(text));
         }
-        public override bool TryGetMember(GetMemberBinder binder, out object result)
+        public override bool TryGetMember(GetMemberBinder binder, out object result)//esto es equivalente al Get de una propiedad y binder es la propiedad.
         {
             bool success = false;
             result = null;
-            XElement firstDescendant =
+            XElement firstDescendant =//que busque hacia abajo.
             Element.Descendants(binder.Name).FirstOrDefault();
             if (firstDescendant != null)
             {

@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap18Multithreading\Multithreding\bin\Debug\Multithreding.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap18Multithreading\Multithreding\bin\Debug\Multithreding.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap18Multithreading\Multithreding\obj\Debug\Multithreding.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap18Multithreading\Multithreding\obj\Debug\Multithreding.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\Cap18Multithreading\Multithreding\obj\Debug\Multithreding.pdb
