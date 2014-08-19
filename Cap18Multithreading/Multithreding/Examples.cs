@@ -185,40 +185,40 @@ namespace Multithreding
 
         public void CancellingTask()
         {
-            CancellationTokenSource source = new CancellationTokenSource();
-            source.Token.Register(() => Debug.Print("Adios"));//con register, se manda llamar un metodo cuando source se cancela.
+            CancellationTokenSource source = new CancellationTokenSource();//paso1, se crea un objeto de la calse cancellationtoken source.
+            source.Token.Register(() => Debug.Print("Adios"));//paso2, se registran el metodo a ejecutar cuando se cancele el thread. con register, se manda llamar un metodo cuando source se cancela.
 
-            Task<string> task = Task<string>.Factory.StartNew(() =>
+            Task<string> task = Task<string>.Factory.StartNew(() =>//se crea un nuevo hilo.
             {   
-                return Write(source.Token);                
+                return Write(source.Token); //paso3, se manda llamar un metodo que recibe el toquen de cancelation.               
             }, source.Token);
 
 
             Thread.Sleep(3000);
-            source.Cancel();//source tiene un metodo cancel que pone en true la propiedad iscancellationRequested a travez de su propiedad token.
+            source.Cancel();//paso4, se manda cancelar .source tiene un metodo cancel que pone en true la propiedad iscancellationRequested a travez de su propiedad token.
             
-            task.Wait();
+            task.Wait();//esperamos a que task termine para continuar con un solo hilo de ejecucion.
             Console.WriteLine();
         }
-        public void LongRunningTask() //un parametro que se puede pasar para indicarle que la tarea se va a tardar y que considere si se crea un thread o se saca del pool, lo que se evalue pertinente.
+        public void LongRunningTask() 
         {
-            Task hilo = new Task(() =>//using es para hacerle dispouse y de esta forma ya no es necesario el wait, limpia la memoria. es mejor fire and forget, iniciar el hilo y continuar, pero hay que asegurarse que se cierre y no este gastando memoria.
+            Task hilo = new Task(() =>//using es para hacerle dispouse y de esta forma ya no es necesario el wait, limpia la memoria. es mejor fire and forget, iniciar el hilo y continuar, pero hay que asegurarse que se cierre y no este gastando memoria. aqui no se usa, pero es mejor cerrar lo que abrimos, para hacer fire and forget, y no preocuparnos por que se esté gastando la memoria.
                 Thread.Sleep(100000),
-                TaskCreationOptions.LongRunning);
+                TaskCreationOptions.LongRunning);//se pone este parametro gracias a una sobrecarga.
             
                 hilo.Start();
             
             //hilo.Wait();//hace que el hilo principal espere a l hilo creado con Task, es mejor poner wait, porque limpia la memoria, implementa IDisposable para cuando pase el garbage collector.
         }
         public void ParallelIterationsExceptions() 
-        {//como cachar una exepcion en parallel.
+        {
             string abecedario = "aeiou";
             int[] enteros = new int[5];
             try
             {
                 Parallel.For(0, 5, i =>
                     {
-                        enteros[i] = int.Parse(abecedario[i].ToString());
+                        enteros[i] = int.Parse(abecedario[i].ToString());//maracara exepcion porque string no se puede convertir a int.
                     });
             }
             catch(AggregateException e)//es como una variable que recibe los exeption de try. 
@@ -235,10 +235,10 @@ namespace Multithreding
             string[] arregloStrings=new string[100];
             int x = 0;
            
-            Parallel.For(0, 100, i =>//toda la funcion, se va a ejecutar en paralelo.//este equivale a un for, solo con varios threads.
+            Parallel.For(0, 100, i =>//toda la funcion, se va a ejecutar en paralelo.//este equivale a un for, solo que lo hace con varios threads.
             {
-                x++;//varios threads tienen acceso a esta variable en este loop, es un race condition. y se imprimen en el orden segun vaya terminando cada thread, aleatoreo.
-                arregloStrings[i] = x.ToString();               
+                x++;//x vale 0+1.//varios threads tienen acceso a esta variable en este loop, es un race condition(generalmente asi para cuando x esta afuera del loop). y se imprimen en el orden segun vaya terminando cada thread, aleatoreo.
+                arregloStrings[i] = x.ToString();//x se convierte a string y se guarda en cada uno de los casilleros, y asi en forma de loop.               
             });
 
             //string valores = string.Join(",", arregloStrings);
@@ -260,14 +260,14 @@ namespace Multithreding
             string[] arregloStrings = new string[100];
             int x = 0;
 
-            CancellationTokenSource cts = new CancellationTokenSource();//mecanismo para pasar el mensaje de cancelacion al parallel for.
-            ParallelOptions options = new ParallelOptions();//sirve para pasar el token al parallel for.
+            CancellationTokenSource cts = new CancellationTokenSource();//esta varialbe va ir fuera del paraller for y va enviar un mensaje de cancelacion.mecanismo para pasar el mensaje de cancelacion al parallel for.
+            ParallelOptions options = new ParallelOptions();//sirve para pasar el token al parallel for.esta variable va ir dentro del paraller for.
             options.CancellationToken = cts.Token;//propiedad que guarda el cancelation token del cts.
-            cts.Token.Register(()=>Debug.Print("cancelando...."));//metodo que se inicia cuando se cancela.
+            cts.Token.Register(()=>Debug.Print("cancelando...."));//register, permite indicar un metodo que se inicia cuando se cancela.
 
             Task otroHilo = new Task(() =>
             {
-                Parallel.For(0, 100, options, i =>//toda la funcion, se va a ejecutar en paralelo.//este equivale a un for, solo con varios threads.
+                Parallel.For(0, 100, options, i =>//toda la funcion, se va a ejecutar en paralelo.//este equivale a un for, solo con varios threads.//aqui esta el options gracias a la sobrecarga, el que se declaro antes.
                 {
                     Thread.Sleep(1000);
                     x++;//varios threads tienen acceso a esta variable en este loop, es un race condition. y se imprimen en el orden segun vaya terminando cada thread, aleatoreo.

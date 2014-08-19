@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\Cap19\bin\Debug\Cap19.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\Cap19\bin\Debug\Cap19.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\Cap19\obj\Debug\Cap19.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\Cap19\obj\Debug\Cap19.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\Cap19\obj\Debug\Cap19.pdb

@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\ResetEvents\bin\Debug\ResetEvents.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\ResetEvents\bin\Debug\ResetEvents.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\ResetEvents\obj\Debug\ResetEvents.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\ResetEvents\obj\Debug\ResetEvents.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\ResetEvents\obj\Debug\ResetEvents.pdb

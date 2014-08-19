@@ -1,0 +1,5 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SafeMultithreadingEvent\bin\Debug\SafeMultithreadingEvent.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SafeMultithreadingEvent\bin\Debug\SafeMultithreadingEvent.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SafeMultithreadingEvent\obj\Debug\SafeMultithreadingEvent.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SafeMultithreadingEvent\obj\Debug\SafeMultithreadingEvent.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SafeMultithreadingEvent\obj\Debug\SafeMultithreadingEvent.pdb

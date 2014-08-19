@@ -1,0 +1,9 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SyncAndMultithreading\bin\Debug\SyncAndMultithreading.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SyncAndMultithreading\bin\Debug\SyncAndMultithreading.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SyncAndMultithreading\bin\Debug\Cap19.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SyncAndMultithreading\bin\Debug\Cap19.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SyncAndMultithreading\obj\Debug\SyncAndMultithreading.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SyncAndMultithreading\obj\Debug\SyncAndMultithreading.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SyncAndMultithreading\obj\Debug\SyncAndMultithreading.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SyncAndMultithreading\bin\Debug\ResetEvents.dll
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\SyncAndMultithreading\bin\Debug\ResetEvents.pdb
