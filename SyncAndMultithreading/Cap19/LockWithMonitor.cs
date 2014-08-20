@@ -17,12 +17,12 @@ namespace Cap19
         public void RaceCondition() 
         {
            
-            Task task = Task.Factory.StartNew(() =>
+            Task task = Task.Factory.StartNew(() =>//este nuevo hilo hace un decremento, mientras el hilo main hace un aumento.
                 {
                     //decrement.
                     for (int i = 0; i < _Total; i++)
                     {
-                        bool lockTaken = false;
+                        bool lockTaken = false;//aqui es falso, en la siguente linea, es verdadero, porque entra el bloqueo y se vuelve true.
                         Monitor.Enter(_Sync, ref lockTaken);//recibe el objeto ancla. y bloquea esta parte para que solo un thead accese a estas variables, hasta el exit.
                         try
                         {
@@ -32,7 +32,7 @@ namespace Cap19
                         {
                             if (lockTaken)
                             {
-                                Monitor.Exit(_Sync);
+                                Monitor.Exit(_Sync);//sale del bloqueo, y comienza otra vez el loop.
                             }
                         }
                     }

@@ -8,7 +8,7 @@ namespace SafeMultithreadingEvent
 {
     public class Timer
     {
-        public event TickHandler Tick;
+        public event TickHandler Tick;//este es el evento.
         public EventArgs e = null;
         public delegate void TickHandler(Timer m, EventArgs e);
         public void Start()
@@ -20,7 +20,7 @@ namespace SafeMultithreadingEvent
                 
                 if (copiaLocal != null)//se pone la copia local en vez del evento Tick,para hacerlo thread safe, Tick puede ser nulo si le agregan otro handler on otro thread, borra la lista actual y crea una nueva y entre el nullo y fire puede ocurrir un race condition.
                 {
-                    copiaLocal(this, e);
+                    copiaLocal(this, e);//se lanza un evento.
                 }
             }
         }

@@ -1,0 +1,6 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\WebRequest\bin\Debug\WebRequest.exe.config
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\WebRequest\bin\Debug\WebRequest.exe
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\WebRequest\bin\Debug\WebRequest.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\WebRequest\obj\Debug\WebRequest.csprojResolveAssemblyReference.cache
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\WebRequest\obj\Debug\WebRequest.exe
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\WebRequest\obj\Debug\WebRequest.pdb

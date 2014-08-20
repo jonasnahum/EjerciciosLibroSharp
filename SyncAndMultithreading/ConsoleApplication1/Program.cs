@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ConsoleApplication1
 {
     public class Program
-    {//Mutex permite que solo un programa corra al mismo tiempo, no te deja abrir otro.
+    {
         static void Main(string[] args)
         {
             bool firstApplicationInstance;

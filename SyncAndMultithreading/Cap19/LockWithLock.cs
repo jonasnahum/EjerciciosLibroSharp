@@ -22,7 +22,7 @@ namespace Cap19
                 //decrement.
                 for (int i = 0; i < _Total; i++)
                 {
-                    lock (_Sync)
+                    lock (_Sync)//bloque _Count para que solo un thread la accese al mismo tiempo. utiliza tambien un ancla.
                     {
                         _Count--;
                     }
