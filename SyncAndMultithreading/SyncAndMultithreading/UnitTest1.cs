@@ -28,6 +28,9 @@ namespace SyncAndMultithreading
             //Aila.RaceCondition();
             //TimerExample.Main();//el timer funciona en otro thread y ese otro threadse puede detener con un AutoResetEvent.
             //APM async programing .. va avisando el estado del thread, si ya acabo a travez de un handler, que en este caso, cada 100 milisec. evalua si ha acabado. visite la clase Program para un ejemplo.
+            // remitase al namespace AsyncDelegateInvocation de este assembly, para ver un ejemplo de AsyncProgramInvocation, APM usando delegagos para monitorear los threads.
+            //remitase al anterior para ver un ejemplo de Event Based Async Patern  que lanza un evento cuando termina otro thread.
+            //tambien para ver un ejemplo de BackgroundWorker EXAMPLE para 2 trheads nomas, que es otro EAP ademas del status, se puede cancelar, marca errores, progreso, etc.
         }
     }
 }

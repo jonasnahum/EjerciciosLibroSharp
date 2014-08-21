@@ -1,0 +1,6 @@
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\AsyncDelegateInvocation\bin\Debug\AsyncDelegateInvocation.exe.config
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\AsyncDelegateInvocation\bin\Debug\AsyncDelegateInvocation.exe
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\AsyncDelegateInvocation\bin\Debug\AsyncDelegateInvocation.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\AsyncDelegateInvocation\obj\Debug\AsyncDelegateInvocation.exe
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\AsyncDelegateInvocation\obj\Debug\AsyncDelegateInvocation.pdb
+C:\Users\casa\Documents\GitHub\EjerciciosLibroSharp\SyncAndMultithreading\AsyncDelegateInvocation\obj\Debug\AsyncDelegateInvocation.csprojResolveAssemblyReference.cache
