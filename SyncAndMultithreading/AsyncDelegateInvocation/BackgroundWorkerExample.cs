@@ -25,7 +25,7 @@ namespace AsyncDelegateInvocation
             if (e.Error != null) //manejo de errores.
             {
                 Console.WriteLine("EROR: {0}", e.Error.Message);
-                return;//el return en el void es para que deje de hacer algo.
+                return;//el return en el void es para que deje de hacer algo y se ssalga que hasta aqui llegue.
             }
             if (e.Cancelled)
             {

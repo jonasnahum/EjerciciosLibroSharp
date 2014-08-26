@@ -47,7 +47,7 @@ namespace AsyncDelegateInvocation
 
             Console.WriteLine("_____________BackgroundWorker EXAMPLE__________________________");
             BackgroundWorkerExample bg = new BackgroundWorkerExample("10000");//el numero 10000es para tardarse.
-            bg.WorkerSupportsCancellation = true;//para cancelar se tiene que poner el flag en true.
+            bg.WorkerSupportsCancellation = true;//para activar cancelaciones se tiene que poner el flag en true.
             Thread.Sleep(2000);//esperar 2 segundos
             bg.CancelAsync();//cancelar.
 
@@ -56,7 +56,7 @@ namespace AsyncDelegateInvocation
 
         static void ObtenerResultado(object sender, CalculateCompletedEventArgs e)
         {
-            if (e.Cancelled)
+            if (e.Cancelled)//e. trae informacion del evento.
                 Console.WriteLine("fue cancelado");
             else
                 Console.WriteLine("{0}", e.Result);

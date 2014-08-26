@@ -1,0 +1,10 @@
+﻿@model MvcHttpMethods.Models.CalculadoraModel
+
+<form action="/HttpMethods/Operaciones/CalculadoraPartial" method="post">
+    <div>
+        A= <input type="text" name ="A" value="@Model.A" />
+        B= <input type="text" name ="B" value="@Model.B" />
+        Resultado= <span>@Model.Resultado</span>
+        <input type="submit" value="Sumar" />
+    </div>
+</form>

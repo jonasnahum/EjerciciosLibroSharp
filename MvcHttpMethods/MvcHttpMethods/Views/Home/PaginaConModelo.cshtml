@@ -1,0 +1,7 @@
+﻿@* espera recibir un modelo de tipo PersonaModel.*@
+@model MvcHttpMethods.Models.PersonaModel 
+    ViewBag.Title = "PaginaConModelo";
+}
+
+<h2>Saludos a:</h2>
+@Model.Nombre @Model.Apellido

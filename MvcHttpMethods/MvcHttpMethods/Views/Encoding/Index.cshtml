@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+    string message = "<strong>This is bold!</strong>";
+ }
+
+Sin Html Encoding lo interpreta <span>@Html.Raw(message)</span>
+
+<br />
+
+Con Html Encoding lo pasa como texto<span>@message</span>
+
+@section scripts {
+<script type ="text/javascript">
+    $(function () {
+        var message = 'Hello @Ajax.JavaScriptStringEncode(ViewBag.Nombre)';
+        $("#message").html(message).show('slow');
+    });
+</script>
+}
+
+<div id="message"></div>
+Url encoding <br />
+alert%28%22encodeado%22%29%3B
+<br />
+html encoding
+<br />
+&lt;, &gt;, &quot;

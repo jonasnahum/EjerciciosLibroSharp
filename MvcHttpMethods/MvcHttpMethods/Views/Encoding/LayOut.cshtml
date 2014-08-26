@@ -1,0 +1,15 @@
+﻿@using MvcHttpMethods.Models;
+@{
+    Layout = "~/Views/Shared/_MiLayOut.cshtml";
+}
+Hola mexico
+
+@*partial view pedazo de codigo que se puede reutilizar en varias paginas.. como un pedazo de pagina *@
+@{Html.RenderPartial("CalculadoraPartial", new CalculadoraModel());}
+
+@section encabezado{
+    Hola encabezado
+}
+@section footer{
+    hola footer
+}

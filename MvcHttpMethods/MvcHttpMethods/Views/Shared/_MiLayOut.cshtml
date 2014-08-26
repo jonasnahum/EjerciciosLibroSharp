@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LayOut</title>
+</head>
+<body>
+    <div style="height:100px;background-color:green;">
+        @RenderSection("encabezado", required: false)
+    </div>
+    <div>
+         @RenderBody()
+    </div>
+    <div style="height:100px;background-color:red;">
+  @*      requerido false no es obligatori ponerle footer*@
+        @RenderSection("footer", required: false)
+    </div>
+
+</body>
+</html>

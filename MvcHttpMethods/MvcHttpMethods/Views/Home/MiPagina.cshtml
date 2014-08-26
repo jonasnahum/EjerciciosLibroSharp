@@ -1,0 +1,25 @@
+﻿@*espera recibir un objeto de tipo PersonaModel.*@
+@model MvcHttpMethods.Models.PersonaModel
+@{
+    ViewBag.Title = "MiPagina";
+}
+
+<h2>Mi Pagina</h2>
+
+@if (string.IsNullOrEmpty(Model.Nombre))
+{   
+    <form action="MiPagina" method="post">//es un formulario para el action MiPagina, que hace post. se enviara a Mipagina post.
+        Nombre:
+        @*el control textbox es un objeto con prodidades type y name que debe coincidir con la propiedad del Model*@
+        <input type="text" name="Nombre" value="@Model.Nombre" />
+        Apellido:
+        <input type="text" name="Apellido" value="@Model.Apellido" />
+        @*un control tipo submit , es un boton que ejecuta el action y el metodo del control form que lo contiene <>*@
+        <input type="submit" value="enviar" />
+    </form>
+} else {//de lo contrario, si Model.Nombre tiene algo...
+    <div>
+        Hola: @Model.Nombre @Model.Apellido
+    </div>
+}
+

@@ -1,0 +1,9 @@
+﻿@using MvcHttpMethods.Models;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hola</h2>
+@{Html.RenderPartial("CalculadoraPartial", new CalculadoraModel());}
+
+@ViewBag.Nombre @ViewData["Apellido"]
