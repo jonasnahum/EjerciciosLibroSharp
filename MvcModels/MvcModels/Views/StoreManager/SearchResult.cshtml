@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MvcModels.Models.Album> 
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+<table>
+    <tr>
+        <th>Artist</th>
+        <th>Title</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var a in Model) 
+    {
+        <tr>
+            <td>@a.Artist.Name</td>
+            <td>@a.Title</td>
+            <td>@string.Format("{0:c}",a.Price) </td>
+        </tr>
+    }
+</table>
+<a href="@Url.Action("Search", "StoreManager")">
+    go back
+</a>

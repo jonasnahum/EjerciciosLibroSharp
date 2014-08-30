@@ -1,7 +1,9 @@
-﻿@model MvcHttpMethods.Models.CalculadoraModel
-
+﻿@*se le indica que va usar un modelo CalcualdoraModel, esta clase casi siempre esta en shared, porque es partial*@
+@model MvcHttpMethods.Models.CalculadoraModel
+@*el metodo donde va postear cuando le den submit, y a donde va enviar el modelo de tipo CalculadoraModel*@
 <form action="/HttpMethods/Operaciones/CalculadoraPartial" method="post">
     <div>
+@*        A= es un texto que aparece fuera del recuadro de tipo texto que se llama "A" igual que la propiedad Model.A.*@
         A= <input type="text" name ="A" value="@Model.A" />
         B= <input type="text" name ="B" value="@Model.B" />
         Resultado= <span>@Model.Resultado</span>

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+<form action="@Url.Action("SearchResult","StoreManager")" method="get">
+    <input type="text" name="q" value="mexico" />
+    <input type="submit" value="search" />
+</form>
+@*tambien se puede escribir el for con c#*@
+@using (Html.BeginForm("SearchResult", "StoreManager", FormMethod.Get))
+{
+    @Html.TextBox("q")
+    <input type="submit" value="search" />
+} 
+
+<a href="@Url.Action("Index", "StoreManager")" title="Regresa a la pagina anterior">
+    go back
+</a>
+
+@Html.ActionLink("GoBack", "Index", "StoreManager", new { title="esta tambien regresa.." })

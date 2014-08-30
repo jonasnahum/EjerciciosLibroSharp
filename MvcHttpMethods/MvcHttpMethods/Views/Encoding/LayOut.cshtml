@@ -1,10 +1,13 @@
-﻿@using MvcHttpMethods.Models;
+﻿@*se le pone el using para que encuentre CalculadoraModel*@
+@using MvcHttpMethods.Models;
 @{
+    //en la carpeta Shared existe un Layout se pasa la direccion.
     Layout = "~/Views/Shared/_MiLayOut.cshtml";
 }
+@*contenido principal*@
 Hola mexico
 
-@*partial view pedazo de codigo que se puede reutilizar en varias paginas.. como un pedazo de pagina *@
+@*partial view pedazo de codigo que se puede reutilizar en varias paginas.. como un pedazo de pagina es una sobre carga y se le pasan 2 parametros*@
 @{Html.RenderPartial("CalculadoraPartial", new CalculadoraModel());}
 
 @section encabezado{

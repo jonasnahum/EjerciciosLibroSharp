@@ -12,10 +12,10 @@ namespace MvcHttpMethods.Controllers
         //
         // GET: /Operaciones/
         [HttpPost]
-        public ActionResult CalculadoraPartial(CalculadoraModel model)
+        public ActionResult CalculadoraPartial(CalculadoraModel model)//recibe un modelo ya posteado de la clase partial que se encuentra en la carpeta Shared.
         {
             model.Sumar();
-            return PartialView(model);
+            return PartialView(model);//y aqui que hace?
         }
 
     }
