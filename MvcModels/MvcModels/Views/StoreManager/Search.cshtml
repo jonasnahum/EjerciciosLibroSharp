@@ -3,19 +3,22 @@
 }
 
 <h2>Search</h2>
+@*el action que manda a esta vista es Search, pero la info aqui obtenida se manda a SearResult*@
 <form action="@Url.Action("SearchResult","StoreManager")" method="get">
+    @*por default tendra el valor mexico*@
     <input type="text" name="q" value="mexico" />
+ @*   el boton para hacer submit dice search, y manda q como parametrho al action SearchResult*@
     <input type="submit" value="search" />
 </form>
-@*tambien se puede escribir el for con c#*@
+@*tambien se puede escribir el form con codigo de c#*@
 @using (Html.BeginForm("SearchResult", "StoreManager", FormMethod.Get))
 {
     @Html.TextBox("q")
     <input type="submit" value="search" />
 } 
-
+@*una ancla que regresa al Index Action de store manager y con un titulo cuando se acerca el mouse*@
 <a href="@Url.Action("Index", "StoreManager")" title="Regresa a la pagina anterior">
     go back
 </a>
-
+@*otra forma de escribir el ancla*@
 @Html.ActionLink("GoBack", "Index", "StoreManager", new { title="esta tambien regresa.." })

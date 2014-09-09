@@ -1,0 +1,16 @@
+﻿@model MvcValidation.Models.PersonaModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form action="@Url.Action("Index","Home")" method="post">
+    @Html.LabelFor(m=>m.Nombre)
+    @Html.TextBoxFor(m=>m.Nombre)
+    @Html.ValidationMessageFor(m=>m.Nombre)
+    @Html.LabelFor(m=>m.Edad)
+    @Html.TextBoxFor(m=>m.Edad)
+    @Html.ValidationMessageFor(m=>m.Edad)
+    <input type="submit" value="Guardar" />
+</form>

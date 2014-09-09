@@ -7,8 +7,10 @@
 <h2>Index</h2>
 
 <p>
+    @*para poner un link existe esta sobre carga en c#*@
     @Html.ActionLink("Create New", "Create")
     <br />
+    @*para poner un link existe esta otra sobre carga en c#*@
     <a href="@Url.Action("Search","StoreManager")" >
         Search
     </a>
@@ -52,6 +54,7 @@
             @Html.DisplayFor(modelItem => item.AlbumArtUrl)
         </td>
         <td>
+            @*se crea link que recibe texto, action, etc en su sobrecarga*@
             @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |
             @Html.ActionLink("Details", "Details", new { id=item.AlbumId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.AlbumId })
